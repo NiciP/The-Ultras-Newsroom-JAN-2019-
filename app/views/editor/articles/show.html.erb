@@ -16,3 +16,7 @@
 <% else %>
   <% false %>
 <% end %>
+
+<%= select("article", "category_ids", Category.all.collect {|p| [ p.name, p.id ] }) %>
+
+
