@@ -6,6 +6,5 @@ FactoryBot.define do
     premium { false }
     user
     approved { true }
-    category
   end
 end
