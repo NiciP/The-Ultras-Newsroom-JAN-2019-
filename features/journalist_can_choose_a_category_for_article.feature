@@ -11,7 +11,7 @@
             | journalist@craft.se   | password | journalist |
 
         And the following categories exist
-            | categories            |
+            | category            |
             | Lifestyle             | 
             | Breaking News         | 
 
@@ -21,6 +21,6 @@
             | Ancient viking grave discovered       | Kids came across sword | Kids come across sword protruding from the earth | journalist@craft.se   | 
 
     Scenario: Journalist can select category an article belongs to
-        When I visit journalist create/edit article page
-        And I click "Category"
-        Then I should see "Lifestyle" 
+        When I visit journalist create article page
+        And I click "Lifestyle" 
+        Then I should see 
