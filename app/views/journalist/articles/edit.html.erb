@@ -15,12 +15,16 @@
         <%= form.label :content %><br>
         <%= form.text_area :content %>
     </p> 
+
+    <p>
+        <%= form.label :category %><br>
+        <%= form.select(:category_ids, Category.all.collect {|p| [ p.name, p.id ] }) %>
+    </p>
+
     <p>
         <%= form.submit %>
     </p>
-    <p>
-        <%= form.select(:category_ids, Category.all.collect {|p| [ p.name, p.id ] }) %>
-    </p>
+
     <p> 
         <%= link_to t('delete', scope: 'links'), 
             journalist_article_path(@article), 

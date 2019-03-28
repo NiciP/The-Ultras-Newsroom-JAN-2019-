@@ -4,6 +4,7 @@ sv:
     title: Titel
     lead: Ingress
     content: Innehåll
+    category: Kategori
 
   links:
     signout: Logga ut

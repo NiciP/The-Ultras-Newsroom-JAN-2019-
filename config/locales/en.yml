@@ -4,6 +4,7 @@ en:
     title: Title
     lead: Lead
     content: Content
+    category: Category
 
   links:
     signout: Sign out
