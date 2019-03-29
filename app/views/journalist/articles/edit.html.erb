@@ -15,6 +15,9 @@
         <%= form.label :content %><br>
         <%= form.text_area :content %>
     </p> 
+    <%# <%= form.select :category_ids, options_for_select(@category.ids), {include_blank: true, multiple: true} %>
+    <%= form.collection_select :category_ids, @category, :id, :name, {include_blank: false}, {multiple: true} %>
+    <%# <%= form.select(:category_ids, @category.collect {|p| [ p.name, p.id ] }) %> 
     <p>
         <%= form.submit %>
     </p>

@@ -9,8 +9,16 @@
 </p>
  
 <p>
-    <strong><%= t :text, scope: 'titles' %></strong>
+    <strong><%= t :content, scope: 'titles' %></strong>
     <%= @article.content %>
 </p>
+
+<p>
+    <strong><%= t :category, scope: 'titles' %></strong>
+    <% @article.categories do |c| %>
+        <%= c.name %>
+    <% end %>
+</p>
+
 <%= link_to t('edit', scope: 'links'), edit_journalist_article_path %>
 <%= link_to t('back', scope: 'links'), journalist_articles_path %>

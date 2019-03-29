@@ -15,9 +15,15 @@ When("I visit the journalist new article page") do
     visit new_journalist_article_path
 end
 
+Given ("I visit the journalist edit article page") do
+    visit edit_journalist_article_path
+end
+
 When("I visit editor can publish article page") do
     visit editor_article_path
 end
+
+
   
 
 Given("the following articles exist") do |table|
@@ -32,11 +38,9 @@ Given("the following articles exist") do |table|
 end
 
 Given("the following categories exist") do |table|
-    table.hashes.each do |article|
-        user = User.find_by(email: article[:user])
-        article["user"] = user
-        new_article = create(:article, article)
-    end
+    table.hashes.each do |category|
+        Category.create(category)
+    end        
 end
 
 Given("the following users exist") do |table|

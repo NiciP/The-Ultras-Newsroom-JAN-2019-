@@ -8,6 +8,11 @@ class Journalist::ArticlesController < ApplicationController
     end
     
     def new   
+        @category = Category.all
+    end
+
+    def edit   
+        @category = Category.all
     end
 
     def create
@@ -21,6 +26,7 @@ class Journalist::ArticlesController < ApplicationController
     end
 
     def update
+        binding.pry
         if @article.update(article_params)
             redirect_to journalist_article_path, notice: 'Article was successfully updated.'
         else
@@ -56,6 +62,6 @@ class Journalist::ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title, :content, :lead)
+        params.require(:article).permit(:title, :content, :lead, :category)
     end 
 end
